@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import '../login.css'
 import { Link } from 'react-router-dom'
 import { fire, facebookProvider } from '../config/Fire'
+import Signup from './signup'
+import logo from '../images/image.png';
 
 
 
@@ -27,7 +29,9 @@ class Login extends Component {
     signup = (e) => {
         e.preventDefault();
         fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
-            .then((u) => { })
+            .then((u) => {
+                <Signup />
+            })
             .catch((error) => {
                 console.log(error)
             })
@@ -58,8 +62,8 @@ class Login extends Component {
 
             <div>
 
-                <button className="loginBtn loginBtn--facebook" onClick={() => { this.authWithFacebook() }}>Log In with Facebook</button>
 
+                <img className="logo-image" src={logo} />
 
 
                 <div className="row">
@@ -88,6 +92,8 @@ class Login extends Component {
                         </button>
                     </form>
                 </div>
+
+                <button className="loginBtn loginBtn--facebook" onClick={() => { this.authWithFacebook() }}>Log In with Facebook</button>
 
 
 

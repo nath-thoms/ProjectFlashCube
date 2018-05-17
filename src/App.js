@@ -38,12 +38,17 @@ class App extends Component {
 
 
         <BrowserRouter>
-          <p className="App-intro">
-            {this.state.user ? (<Link to="/home"><Home /></Link>) : (<Login />)}
-            {/* <Login /> */}
+          <div>
 
 
-          </p>
+
+            <p className="App-intro">
+              {this.state.user ? (<Link to="/home"><Home user={this.state.user} /></Link>) : (<Login />)}
+              {/* <Login /> */}
+
+
+            </p>
+          </div>
         </BrowserRouter>
 
 
