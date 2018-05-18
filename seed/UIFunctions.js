@@ -109,3 +109,9 @@ function createTopicStudyingRel(user, topic) {
     })
     .catch(console.log);
 }
+
+module.exports = {
+
+  newStudyRelPromise, createTopicStudyingRel, createTermStudyingRel, addTerm, addTopic, addUser
+
+}
